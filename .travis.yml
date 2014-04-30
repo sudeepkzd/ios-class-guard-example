@@ -1,0 +1,6 @@
+language: objective-c
+install: curl https://raw.githubusercontent.com/Polidea/ios-class-guard/master/install.sh | bash
+before_script: ./obfuscate_project
+xcode_sdk: iphonesimulator
+xcode_project: SWTableViewCell.xcodeproj
+xcode_scheme: SWTableViewCell

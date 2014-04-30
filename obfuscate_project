@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -xe
+
+PROJECT=SWTableViewCell.xcodeproj
+SCHEME=SWTableViewCell
+TARGET=SWTableViewCell
+CONFIGURATION=Release
+SDK=iphoneos
+
+# Clean current workspace
+git reset --hard
+git clean -fdx
+
+[[ -f Podfile ]] && [[ ! -f Pods/Manifest.lock ]] && pod install
+
+# Build project to fetch symbols
+xctool \
+	-project "$PROJECT" \
+	-scheme "$SCHEME" \
+	-configuration "$CONFIGURATION" \
+	-sdk "$SDK" \
+	clean build \
+	OBJROOT=build/ \
+	SYMROOT=build/
+
+SYMBOLS_FILE="$PWD/symbols.h"
+
+find . -name '*-Prefix.pch' -exec sed -i .bak '1i\
+'"#import \"$SYMBOLS_FILE\"
+" "{}" \;
+
+# Obfuscate project
+ios-class-guard \
+	--sdk-ios 7.1 \
+	-O symbols.h \
+	build/$CONFIGURATION-$SDK/$TARGET.app/$TARGET

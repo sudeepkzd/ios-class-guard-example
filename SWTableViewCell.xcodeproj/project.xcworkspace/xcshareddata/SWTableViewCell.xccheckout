@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4BCFE47C-7072-4B58-8A0A-6FDB8A8354C1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SWTableViewCell</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>24C70E3C-91DD-4D20-B3D4-CD9E17B0FFDE</key>
+		<string>https://github.com/Polidea/ios-class-guard-example</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SWTableViewCell.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>24C70E3C-91DD-4D20-B3D4-CD9E17B0FFDE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Polidea/ios-class-guard-example</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>24C70E3C-91DD-4D20-B3D4-CD9E17B0FFDE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>24C70E3C-91DD-4D20-B3D4-CD9E17B0FFDE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios-class-guard-example</string>
+		</dict>
+	</array>
+</dict>
+</plist>

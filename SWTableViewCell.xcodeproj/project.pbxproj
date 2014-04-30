@@ -71,6 +71,7 @@
 		AF34B78317DEE2B800BD9082 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AF34B78417DEE2B800BD9082 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AFF15D1617F35E46007F5746 /* MI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MI.png; sourceTree = "<group>"; };
+		CBA4629E191142C400078E74 /* symbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symbols.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +155,7 @@
 		AF34B76F17DEE2B300BD9082 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBA4629E191142C400078E74 /* symbols.h */,
 				AF28B0F617F77F1100A77ABB /* list@2x.png */,
 				AF28B0F417F77DB000A77ABB /* check@2x.png */,
 				AF28B0F217F77DA600A77ABB /* cross@2x.png */,
