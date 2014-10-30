@@ -16,15 +16,20 @@ if ! which ios-class-guard; then
 	brew install ios-class-guard
 fi
 
+if ! which xcpretty; then
+	gem install xcpretty
+fi
+
 # Build project to fetch symbols
-xctool \
+xcodebuild \
 	-project "$PROJECT" \
 	-scheme "$SCHEME" \
 	-configuration "$CONFIGURATION" \
 	-sdk "$SDK" \
 	clean build \
 	OBJROOT=build/ \
-	SYMROOT=build/
+	SYMROOT=build/ |\
+	xcpretty -c
 
 SYMBOLS_FILE="$PWD/symbols.h"
 
@@ -48,6 +53,7 @@ xctool \
 	-sdk "$SDK" \
 	clean build \
 	OBJROOT=build.obf/ \
-	SYMROOT=build.obf/
+	SYMROOT=build.obf/ |\
+	xcpretty -c
 
 class-dump -H -o headers.obf build.obf/$CONFIGURATION-$SDK/$TARGET.app/$TARGET
