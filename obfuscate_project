@@ -6,6 +6,7 @@ PROJECT=ExampleBankingApp.xcodeproj
 SCHEME=ExampleBankingApp
 TARGET=ExampleBankingApp
 CONFIGURATION=Release
+OBFUSCATION_SDK=iphonesimulator
 SDK=iphoneos
 
 git checkout ExampleBankingApp
@@ -25,7 +26,7 @@ xcodebuild \
 	-project "$PROJECT" \
 	-scheme "$SCHEME" \
 	-configuration "$CONFIGURATION" \
-	-sdk "$SDK" \
+	-sdk "$OBFUSCATION_SDK" \
 	clean build \
 	OBJROOT=build/ \
 	SYMROOT=build/ |\
@@ -37,13 +38,13 @@ find . -name '*-Prefix.pch' -exec sed -i .bak '1i\
 '"#import \"$SYMBOLS_FILE\"
 " "{}" \;
 
-class-dump -H -o headers build/$CONFIGURATION-$SDK/$TARGET.app/$TARGET
+class-dump -H -o headers build/$CONFIGURATION-$OBFUSCATION_SDK/$TARGET.app/$TARGET
 
 # Obfuscate project
 ios-class-guard \
-	--sdk-root /Applications/Xcode-5.1.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk \
+	--sdk-root "$(xcode-select -p)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.1.sdk" \
 	-O symbols.h \
-	build/$CONFIGURATION-$SDK/$TARGET.app/$TARGET
+	build/$CONFIGURATION-$OBFUSCATION_SDK/$TARGET.app/$TARGET
 
 # Build project to fetch symbols
 xctool \
