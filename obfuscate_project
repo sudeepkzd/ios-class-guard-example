@@ -62,7 +62,7 @@ ios-class-guard \
 	build/$CONFIGURATION-$OBFUSCATION_SDK/$TARGET.app/$TARGET
 
 # Build project to fetch symbols
-xctool \
+xcodebuild \
 	-project "$PROJECT" \
 	-scheme "$SCHEME" \
 	-configuration "$CONFIGURATION" \
